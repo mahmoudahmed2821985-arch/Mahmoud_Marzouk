@@ -1,216 +1,445 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="ar" dir="rtl" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahmoud Marzouk | Premium Portfolio</title>
+    <title>محمود أحمد مرزوق | استشاري التحول الرقمي وإدارة مشروعات ERP</title>
     
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- AOS Animation CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Open Graph Meta Tags for WhatsApp & LinkedIn Previews -->
+    <meta property="og:title" content="محمود أحمد مرزوق | Digital Transformation Consultant">
+    <meta property="og:description" content="استشاري تحول رقمي ومدير مشروع مساعد لبرامج (Microsoft Dynamics 365 ERP) بخبرة 15+ عاماً في تطوير البنية التحتية المؤسسية وحوكمة البيانات.">
+    <meta property="og:image" content="image.png">
+    <meta property="og:type" content="website">
 
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    },
                     colors: {
-                        luxury: {
-                            navy: '#0B132B',       /* Deep Dark Navy */
-                            slate: '#1C2541',      /* Dark Slate */
-                            gold: '#D4AF37',       /* Metallic Gold */
-                            goldHover: '#F1C40F',  /* Bright Gold */
-                            light: '#E2E8F0',      /* Soft Light Gray for text */
-                            card: '#161F36'        /* Card Background */
+                        navy: {
+                            950: '#060b19',
+                            900: '#0a1128',
+                            800: '#101d42',
+                            700: '#1b2a5c',
+                        },
+                        gold: {
+                            400: '#e5c158',
+                            500: '#d4af37',
+                            600: '#aa8c2c',
                         }
                     },
-                    boxShadow: {
-                        'gold-glow': '0 0 25px rgba(212, 175, 55, 0.4)',
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        playfair: ['Playfair Display', 'serif'],
                     }
                 }
             }
         }
     </script>
     <style>
-        /* Custom Scrollbar for a premium feel */
-        ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: #0B132B; }
-        ::-webkit-scrollbar-thumb { background: #1C2541; border-radius: 5px; border: 1px solid #D4AF37; }
-        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
-        
-        body { background-color: #0B132B; color: #E2E8F0; }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #060b19;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .gold-glow {
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.25);
+        }
+        .gold-border {
+            border: 2px solid #d4af37;
+        }
+        .glass-card {
+            background: rgba(16, 29, 66, 0.65);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.2);
+        }
+        @keyframes pulse-slow {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+        }
+        .whatsapp-float {
+            animation: pulse-slow 2.5s infinite;
+        }
     </style>
 </head>
-<body class="font-sans antialiased overflow-x-hidden selection:bg-luxury-gold selection:text-luxury-navy">
+<body class="bg-navy-950 text-gray-100 antialiased selection:bg-gold-500 selection:text-navy-950">
 
-    <!-- Premium Navigation -->
-    <nav class="fixed w-full z-50 bg-luxury-navy/90 backdrop-blur-md border-b border-luxury-gold/20 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center" data-aos="fade-right">
-                    <a href="#" class="text-2xl font-serif font-bold text-white tracking-wider">
-                        M<span class="text-luxury-gold">.</span>Marzouk
-                    </a>
+    <!-- Header & Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-navy-950/90 backdrop-blur-md border-b border-navy-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            <!-- Brand -->
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gold-500/10 border border-gold-500 flex items-center justify-center text-gold-500 font-playfair font-bold text-lg">
+                    M
                 </div>
-                <div class="hidden md:flex space-x-8" data-aos="fade-left">
-                    <a href="#about" class="text-gray-300 hover:text-luxury-gold text-sm uppercase tracking-widest transition-colors">About</a>
-                    <a href="#competencies" class="text-gray-300 hover:text-luxury-gold text-sm uppercase tracking-widest transition-colors">Expertise</a>
-                    <a href="#experience" class="text-gray-300 hover:text-luxury-gold text-sm uppercase tracking-widest transition-colors">Experience</a>
-                    <a href="#contact" class="text-luxury-gold border border-luxury-gold px-4 py-2 rounded hover:bg-luxury-gold hover:text-luxury-navy text-sm uppercase tracking-widest transition-all">Contact</a>
+                <span class="text-lg sm:text-xl font-bold font-playfair text-gold-500 tracking-wider">
+                    MAHMOUD MARZOUK
+                </span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-gray-300">
+                <a href="#about" class="hover:text-gold-500 transition" data-ar="النبذة" data-en="About">النبذة</a>
+                <a href="#projects" class="hover:text-gold-500 transition" data-ar="أبرز المبادرات" data-en="Key Initiatives">أبرز المبادرات</a>
+                <a href="#competencies" class="hover:text-gold-500 transition" data-ar="الكفاءات" data-en="Competencies">الكفاءات</a>
+                <a href="#experience" class="hover:text-gold-500 transition" data-ar="الخبرات" data-en="Experience">الخبرات</a>
+                <a href="#credentials" class="hover:text-gold-500 transition" data-ar="الشهادات" data-en="Credentials">الشهادات</a>
+                <a href="#contact" class="hover:text-gold-500 transition" data-ar="تواصل معي" data-en="Contact">تواصل معي</a>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-3">
+                <button onclick="toggleLanguage()" class="px-3.5 py-1.5 rounded-full border border-gold-500/50 text-gold-500 text-xs font-bold hover:bg-gold-500 hover:text-navy-950 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-globe"></i> <span id="lang-btn-text">EN</span>
+                </button>
+                <a href="https://wa.me/201113208080" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-full text-xs font-bold transition shadow-lg">
+                    <i class="fa-brands fa-whatsapp text-base"></i> <span data-ar="واتساب مباشر" data-en="WhatsApp">واتساب مباشر</span>
+                </a>
+                <!-- Mobile Hamburger Button -->
+                <button onclick="toggleMobileMenu()" class="lg:hidden w-10 h-10 rounded-xl border border-navy-700 flex items-center justify-center text-gold-500 hover:bg-navy-800 transition">
+                    <i id="menu-icon" class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-navy-900 border-b border-navy-800 px-6 py-5 space-y-4">
+            <div class="flex flex-col space-y-3 text-sm font-semibold">
+                <a href="#about" onclick="toggleMobileMenu()" class="py-2 border-b border-navy-800 hover:text-gold-500" data-ar="النبذة التعريفية" data-en="About">النبذة التعريفية</a>
+                <a href="#projects" onclick="toggleMobileMenu()" class="py-2 border-b border-navy-800 hover:text-gold-500" data-ar="أبرز المبادرات والمشروعات" data-en="Key Initiatives">أبرز المبادرات والمشروعات</a>
+                <a href="#competencies" onclick="toggleMobileMenu()" class="py-2 border-b border-navy-800 hover:text-gold-500" data-ar="الكفاءات التشغيلية" data-en="Core Competencies">الكفاءات التشغيلية</a>
+                <a href="#experience" onclick="toggleMobileMenu()" class="py-2 border-b border-navy-800 hover:text-gold-500" data-ar="المسيرة المهنية" data-en="Experience">المسيرة المهنية</a>
+                <a href="#credentials" onclick="toggleMobileMenu()" class="py-2 border-b border-navy-800 hover:text-gold-500" data-ar="التعليم والشهادات" data-en="Credentials">التعليم والشهادات</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="py-2 hover:text-gold-500" data-ar="تواصل معي" data-en="Contact">تواصل معي</a>
+            </div>
+            <div class="pt-2 flex gap-3">
+                <a href="https://wa.me/201113208080" target="_blank" class="flex-1 bg-emerald-600 text-white py-2.5 rounded-xl text-center text-xs font-bold flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-base"></i> <span data-ar="تواصل عبر واتساب" data-en="WhatsApp Me">تواصل عبر واتساب</span>
+                </a>
+                <button onclick="downloadVCard()" class="flex-1 border border-gold-500 text-gold-500 py-2.5 rounded-xl text-center text-xs font-bold flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-address-card"></i> <span data-ar="حفظ جهة الاتصال" data-en="Save Contact">حفظ جهة الاتصال</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 overflow-hidden">
+        <!-- Ambient Background Glows -->
+        <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-navy-700/30 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+            <!-- Text Content -->
+            <div class="lg:col-span-7 text-center lg:text-start order-2 lg:order-1" data-aos="fade-up" data-aos-duration="1000">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500/10 text-gold-400 text-xs sm:text-sm font-bold mb-5 border border-gold-500/30">
+                    <i class="fa-solid fa-award"></i>
+                    <span data-ar="استشاري تحول رقمي | مدير مشروع مساعد (ERP)" data-en="Digital Transformation Consultant | Assistant Project Manager">استشاري تحول رقمي | مدير مشروع مساعد (ERP)</span>
+                </div>
+                
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-playfair tracking-tight mb-6 leading-tight text-white">
+                    <span data-ar="محمود أحمد مرزوق" data-en="Mahmoud Ahmed Marzouk">محمود أحمد مرزوق</span>
+                </h1>
+                
+                <p class="text-base sm:text-lg text-gray-300 mb-6 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal" data-ar="متخصص في قيادة المبادرات التقنية الاستراتيجية وتطوير البنية التحتية للمؤسسات، مع تركيز عميق على تخطيط وتنفيذ وإدارة أنظمة (Microsoft Dynamics 365 ERP)، وحوكمة جودة البيانات، ودعم اتخاذ القرار بالقطاع الحكومي." data-en="Specializing in leading strategic IT initiatives and enterprise infrastructure modernization, with a deep focus on Microsoft Dynamics 365 ERP implementation, data quality governance, and executive decision support in the public sector.">
+                    متخصص في قيادة المبادرات التقنية الاستراتيجية وتطوير البنية التحتية للمؤسسات، مع تركيز عميق على تخطيط وتنفيذ وإدارة أنظمة (Microsoft Dynamics 365 ERP)، وحوكمة جودة البيانات، ودعم اتخاذ القرار بالقطاع الحكومي.
+                </p>
+
+                <!-- Tech & Skill Pills -->
+                <div class="flex flex-wrap justify-center lg:justify-start gap-2 mb-8">
+                    <span class="px-3 py-1 rounded-lg bg-navy-800 border border-navy-700 text-xs text-gold-400 font-semibold">Microsoft Dynamics 365</span>
+                    <span class="px-3 py-1 rounded-lg bg-navy-800 border border-navy-700 text-xs text-gray-300">Power BI</span>
+                    <span class="px-3 py-1 rounded-lg bg-navy-800 border border-navy-700 text-xs text-gray-300">SQL & Advanced Excel</span>
+                    <span class="px-3 py-1 rounded-lg bg-navy-800 border border-navy-700 text-xs text-gray-300" data-ar="حوكمة البيانات" data-en="Data Governance">حوكمة البيانات</span>
+                    <span class="px-3 py-1 rounded-lg bg-navy-800 border border-navy-700 text-xs text-gray-300" data-ar="إدارة التغيير" data-en="Change Management">إدارة التغيير</span>
+                    <span class="px-3 py-1 rounded-lg bg-navy-800 border border-navy-700 text-xs text-gold-400 font-semibold" data-ar="مدرب معتمد (TOT)" data-en="Certified Trainer (TOT)">مدرب معتمد (TOT)</span>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4">
+                    <a href="https://wa.me/201113208080" target="_blank" class="px-6 sm:px-7 py-3.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-navy-950 font-bold text-sm transition shadow-lg shadow-gold-500/20 flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> <span data-ar="تواصل عبر واتساب" data-en="Connect on WhatsApp">تواصل عبر واتساب</span>
+                    </a>
+                    <a href="Mahmoud_Marzouk_CV_EN.pdf" target="_blank" class="px-6 sm:px-7 py-3.5 rounded-xl bg-navy-800 hover:bg-navy-700 border border-gold-500/40 text-gold-400 font-bold text-sm transition flex items-center gap-2">
+                        <i class="fa-solid fa-file-pdf"></i> <span data-ar="استعراض السيرة الذاتية (CV)" data-en="View Full CV (PDF)">استعراض السيرة الذاتية (CV)</span>
+                    </a>
+                    <button onclick="downloadVCard()" class="px-5 py-3.5 rounded-xl border border-navy-700 hover:border-gold-500/50 text-gray-300 hover:text-gold-400 font-bold text-sm transition flex items-center gap-2" title="Save Contact to Phone">
+                        <i class="fa-solid fa-user-plus"></i> <span data-ar="حفظ جهة الاتصال" data-en="Save vCard">حفظ جهة الاتصال</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Profile Image -->
+            <div class="lg:col-span-5 flex justify-center order-1 lg:order-2" data-aos="zoom-in" data-aos-duration="1200">
+                <div class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full gold-border gold-glow p-2.5 bg-navy-900">
+                    <img src="image.png" alt="محمود أحمد مرزوق" class="w-full h-full object-cover object-top rounded-full shadow-2xl">
+                    <!-- Floating Badge 1 -->
+                    <div class="absolute -bottom-3 right-4 sm:right-8 bg-gold-500 text-navy-950 px-4 py-1.5 rounded-full text-xs sm:text-sm font-extrabold shadow-xl flex items-center gap-1.5">
+                        <i class="fa-solid fa-star"></i>
+                        <span data-ar="خبرة 15+ عاماً" data-en="15+ Years Experience">خبرة 15+ عاماً</span>
+                    </div>
+                    <!-- Floating Badge 2 -->
+                    <div class="absolute top-4 -left-2 sm:-left-4 bg-navy-900/95 border border-gold-500/50 text-gold-400 px-3.5 py-1.5 rounded-full text-xs font-bold shadow-xl flex items-center gap-1.5">
+                        <i class="fa-solid fa-cubes"></i>
+                        <span>Dynamics 365 ERP</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </nav>
+    </section>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-luxury-navy">
-        <!-- Abstract Background Elements -->
-        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-luxury-gold/5 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-900/10 rounded-full blur-3xl"></div>
-
-        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div data-aos="zoom-in" data-aos-duration="1000" class="mb-10">
-                <img src="image.png" alt="Mahmoud Marzouk" class="w-56 h-56 rounded-full object-cover border-4 border-luxury-gold shadow-gold-glow mx-auto" onerror="this.src='https://placehold.co/224x224/1C2541/D4AF37?text=MM'">
+    <!-- Key Metrics Bar -->
+    <section class="py-10 bg-navy-900/90 border-y border-navy-800 relative z-20 px-4 sm:px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+            <div class="p-4" data-aos="fade-up" data-aos-delay="50">
+                <div class="text-3xl sm:text-4xl font-extrabold font-playfair text-gold-500 mb-1">+15</div>
+                <div class="text-xs sm:text-sm text-gray-300 font-semibold" data-ar="عاماً من الخبرة بالقطاع الحكومي" data-en="Years of Government Experience">عاماً من الخبرة بالقطاع الحكومي</div>
             </div>
-            
-            <h1 data-aos="fade-up" data-aos-delay="200" class="text-5xl sm:text-7xl font-serif font-bold text-white mb-4 tracking-tight">
-                Mahmoud <span class="text-luxury-gold">Marzouk</span>
-            </h1>
-            <h2 data-aos="fade-up" data-aos-delay="400" class="text-xl sm:text-2xl font-light text-gray-400 mb-8 max-w-3xl mx-auto tracking-wide leading-relaxed">
-                Digital Transformation Consultant & Assistant Project Manager
-                <span class="block text-luxury-gold text-lg mt-3 font-medium">Microsoft Dynamics 365 ERP Specialist</span>
-            </h2>
-            
-            <div data-aos="fade-up" data-aos-delay="600" class="flex flex-col sm:flex-row justify-center gap-6 mt-10">
-                <a href="Mahmoud_Marzouk_CV_EN.pdf" target="_blank" class="inline-flex justify-center items-center px-8 py-4 bg-luxury-gold text-luxury-navy font-bold rounded hover:bg-luxury-goldHover hover:shadow-gold-glow transition-all duration-300 uppercase tracking-widest text-sm">
-                    <i class="fa-solid fa-file-pdf mr-3 text-lg"></i> Download CV
-                </a>
-                <a href="https://wa.me/201113208080" target="_blank" class="inline-flex justify-center items-center px-8 py-4 bg-transparent border border-luxury-gold text-luxury-gold font-bold rounded hover:bg-luxury-gold hover:text-luxury-navy transition-all duration-300 uppercase tracking-widest text-sm">
-                    <i class="fa-brands fa-whatsapp mr-3 text-lg"></i> WhatsApp Me
-                </a>
+            <div class="p-4" data-aos="fade-up" data-aos-delay="150">
+                <div class="text-3xl sm:text-4xl font-extrabold font-playfair text-gold-500 mb-1">+6</div>
+                <div class="text-xs sm:text-sm text-gray-300 font-semibold" data-ar="سنوات في النظم والتحول الرقمي" data-en="Years in Systems & Digital Transformation">سنوات في النظم والتحول الرقمي</div>
+            </div>
+            <div class="p-4" data-aos="fade-up" data-aos-delay="250">
+                <div class="text-3xl sm:text-4xl font-extrabold font-playfair text-gold-500 mb-1">+7</div>
+                <div class="text-xs sm:text-sm text-gray-300 font-semibold" data-ar="سنوات خبرة بمسارات العمل القضائية" data-en="Years in Judicial Workflow Operations">سنوات خبرة بمسارات العمل القضائية</div>
+            </div>
+            <div class="p-4" data-aos="fade-up" data-aos-delay="350">
+                <div class="text-3xl sm:text-4xl font-extrabold font-playfair text-gold-500 mb-1">100%</div>
+                <div class="text-xs sm:text-sm text-gray-300 font-semibold" data-ar="تقييم أداء «ممتاز» لـ 3 سنوات متتالية" data-en="'Excellent' Rating for 3 Consecutive Years">تقييم أداء «ممتاز» لـ 3 سنوات متتالية</div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-24 bg-luxury-slate border-y border-white/5">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div data-aos="fade-up">
-                <h2 class="text-4xl font-serif font-bold text-white mb-4">Professional Overview</h2>
-                <div class="h-1 w-24 bg-luxury-gold mx-auto mb-12"></div>
-            </div>
-            
-            <p data-aos="fade-up" data-aos-delay="200" class="text-xl text-gray-300 leading-loose font-light">
-                A dedicated Digital Transformation Consultant and Project Management professional with <strong class="text-luxury-gold font-medium">15 years of government experience</strong>. For the past 6 years, I have proudly served in the Systems & Digital Transformation Department of the <strong class="text-white font-medium">Egyptian Public Prosecution</strong>. I specialize in modernizing workflows, implementing enterprise-level ERP systems, and bridging the gap between complex organizational needs and robust digital solutions.
+    <section id="about" class="py-20 sm:py-24 px-4 sm:px-6">
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+            <span class="text-gold-500 text-xs font-bold tracking-widest uppercase block mb-2" data-ar="الرؤية والمنهجية" data-en="EXECUTIVE PROFILE">الرؤية والمنهجية</span>
+            <h2 class="text-2xl sm:text-4xl font-bold font-playfair text-white mb-6" data-ar="نبذة تعريفية" data-en="Professional Summary">نبذة تعريفية</h2>
+            <div class="w-16 h-1 bg-gold-500 mx-auto rounded-full mb-8"></div>
+            <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-6" data-ar="استشاري تحول رقمي وإدارة مشروعات تقنية بخبرة تمتد لـ 15 عاماً في العمل الحكومي والمؤسسي، منها 6 سنوات في إدارة النظم والتحول الرقمي بالنيابة العامة المصرية. أتولى حالياً مهام مدير مشروع مساعد في برنامج تخطيط موارد المؤسسات (Microsoft Dynamics 365 ERP)." data-en="Public sector digital transformation and project management professional with 15 years of government experience, including 6 years in the Systems & Digital Transformation Department of the Public Prosecution of Egypt. Currently serving as Assistant Project Manager on the Microsoft Dynamics 365 ERP program.">
+                استشاري تحول رقمي وإدارة مشروعات تقنية بخبرة تمتد لـ 15 عاماً في العمل الحكومي والمؤسسي، منها 6 سنوات في إدارة النظم والتحول الرقمي بالنيابة العامة المصرية. أتولى حالياً مهام مدير مشروع مساعد في برنامج تخطيط موارد المؤسسات (Microsoft Dynamics 365 ERP).
+            </p>
+            <p class="text-gray-400 text-base sm:text-lg leading-relaxed" data-ar="أجمع بين المعرفة الميدانية العميقة بمسارات العمل الإجرائية والقضائية والخبرة العملية في إطلاق الأنظمة الرقمية، وتدريب المستخدمين، وحوكمة جودة البيانات، وإعداد تقارير دعم القرار. أكرس جهدي لتوظيف التكنولوجيا الحديثة في تبسيط العمليات المعقدة وتحويل التحديات التشغيلية إلى فرص حقيقية للابتكار وتحسين الخدمات." data-en="Combining hands-on workflow knowledge with practical expertise in system rollout, end-user training, data quality governance, and decision-support reporting. Dedicated to leveraging modern technology to simplify complex processes and transform operational challenges into opportunities for innovation.">
+                أجمع بين المعرفة الميدانية العميقة بمسارات العمل الإجرائية والقضائية والخبرة العملية في إطلاق الأنظمة الرقمية، وتدريب المستخدمين، وحوكمة جودة البيانات، وإعداد تقارير دعم القرار. أكرس جهدي لتوظيف التكنولوجيا الحديثة في تبسيط العمليات المعقدة وتحويل التحديات التشغيلية إلى فرص حقيقية للابتكار وتحسين الخدمات.
             </p>
         </div>
     </section>
 
-    <!-- Core Competencies -->
-    <section id="competencies" class="py-24 bg-luxury-navy">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Key Initiatives & Projects (Case Studies) -->
+    <section id="projects" class="py-20 sm:py-24 bg-navy-900/50 border-y border-navy-800 px-4 sm:px-6">
+        <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-serif font-bold text-white mb-4">Areas of Expertise</h2>
-                <div class="h-1 w-24 bg-luxury-gold mx-auto"></div>
+                <span class="text-gold-500 text-xs font-bold tracking-widest uppercase block mb-2" data-ar="سجل الإنجازات" data-en="PORTFOLIO & IMPACT">سجل الإنجازات</span>
+                <h2 class="text-2xl sm:text-4xl font-bold font-playfair text-white mb-4" data-ar="أبرز المشروعات والمبادرات القيادية" data-en="Key Strategic Initiatives">أبرز المشروعات والمبادرات القيادية</h2>
+                <div class="w-16 h-1 bg-gold-500 mx-auto rounded-full"></div>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div data-aos="fade-up" data-aos-delay="100" class="bg-luxury-card p-8 rounded-lg border border-white/5 hover:border-luxury-gold transition-colors duration-300 group">
-                    <i class="fa-solid fa-network-wired text-4xl text-luxury-gold mb-6 group-hover:scale-110 transition-transform"></i>
-                    <h3 class="text-2xl font-serif text-white mb-3">Digital Transformation</h3>
-                    <p class="text-gray-400 font-light leading-relaxed">Driving process digitization and analyzing current-state workflows for effective and seamless modernization.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Initiative 1 -->
+                <div class="glass-card p-8 rounded-2xl transition duration-300 relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-500">
+                            <i class="fa-solid fa-layer-group text-xl"></i>
+                        </div>
+                        <span class="text-xs font-bold text-gold-400 bg-gold-500/10 px-3 py-1 rounded-full" data-ar="منذ يناير 2022" data-en="Since Jan 2022">منذ يناير 2022</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3" data-ar="نشر وتطبيق منظومة Microsoft Dynamics 365 ERP" data-en="Microsoft Dynamics 365 ERP Rollout">نشر وتطبيق منظومة Microsoft Dynamics 365 ERP</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4" data-ar="المساهمة الفعالة كمدير مشروع مساعد في إطلاق وتعميم نظام تخطيط موارد المؤسسات (Dynamics 365) بإدارة تخطيط وإدارة الموارد، والتنسيق المباشر بين فريق المشروع والإدارات المستفيدة لمتابعة نسب الإنجاز وضمان استقرار التشغيل." data-en="Contributing as Assistant Project Manager to the rollout of Microsoft Dynamics 365 in the Resource Planning & Management Department, coordinating between the project team and user departments and tracking implementation progress.">
+                        المساهمة الفعالة كمدير مشروع مساعد في إطلاق وتعميم نظام تخطيط موارد المؤسسات (Dynamics 365) بإدارة تخطيط وإدارة الموارد، والتنسيق المباشر بين فريق المشروع والإدارات المستفيدة لمتابعة نسب الإنجاز وضمان استقرار التشغيل.
+                    </p>
+                    <div class="flex flex-wrap gap-2 pt-2 border-t border-navy-800 text-xs text-gold-400">
+                        <span>#Dynamics_365</span>
+                        <span>#Inventory_Procurement_Accounts</span>
+                        <span>#GoLive_Support</span>
+                    </div>
                 </div>
-                <!-- Card 2 -->
-                <div data-aos="fade-up" data-aos-delay="200" class="bg-luxury-card p-8 rounded-lg border border-white/5 hover:border-luxury-gold transition-colors duration-300 group">
-                    <i class="fa-solid fa-list-check text-4xl text-luxury-gold mb-6 group-hover:scale-110 transition-transform"></i>
-                    <h3 class="text-2xl font-serif text-white mb-3">Project Management</h3>
-                    <p class="text-gray-400 font-light leading-relaxed">Leading project execution, timeline tracking, and stakeholder coordination for successful system go-lives.</p>
+
+                <!-- Initiative 2 -->
+                <div class="glass-card p-8 rounded-2xl transition duration-300 relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-500">
+                            <i class="fa-solid fa-shield-halved text-xl"></i>
+                        </div>
+                        <span class="text-xs font-bold text-gold-400 bg-gold-500/10 px-3 py-1 rounded-full" data-ar="منذ أكتوبر 2022" data-en="Since Oct 2022">منذ أكتوبر 2022</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3" data-ar="منظومة حوكمة ومراقبة جودة البيانات" data-en="Enterprise Data Quality Governance">منظومة حوكمة ومراقبة جودة البيانات</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4" data-ar="الإشراف الرقابي على جودة إدخال البيانات عبر مختلف الإدارات المركزية والدوائر القضائية، ومراقبة دقة واكتمال السجلات الرقمية لبناء قواعد بيانات موثوقة تدعم التكامل المؤسسي." data-en="Supervising data-entry quality across central departments and judicial circuits, systematically monitoring data accuracy and completeness to ensure reliable enterprise databases.">
+                        الإشراف الرقابي على جودة إدخال البيانات عبر مختلف الإدارات المركزية والدوائر القضائية، ومراقبة دقة واكتمال السجلات الرقمية لبناء قواعد بيانات موثوقة تدعم التكامل المؤسسي.
+                    </p>
+                    <div class="flex flex-wrap gap-2 pt-2 border-t border-navy-800 text-xs text-gold-400">
+                        <span>#Data_Governance</span>
+                        <span>#Quality_Assurance</span>
+                        <span>#Data_Integrity</span>
+                    </div>
                 </div>
-                <!-- Card 3 -->
-                <div data-aos="fade-up" data-aos-delay="300" class="bg-luxury-card p-8 rounded-lg border border-white/5 hover:border-luxury-gold transition-colors duration-300 group">
-                    <i class="fa-brands fa-microsoft text-4xl text-luxury-gold mb-6 group-hover:scale-110 transition-transform"></i>
-                    <h3 class="text-2xl font-serif text-white mb-3">ERP Systems</h3>
-                    <p class="text-gray-400 font-light leading-relaxed">Deep expertise in Microsoft Dynamics 365 implementation and administration (Inventory, Procurement, Accounts).</p>
+
+                <!-- Initiative 3 -->
+                <div class="glass-card p-8 rounded-2xl transition duration-300 relative overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-500">
+                            <i class="fa-solid fa-chart-pie text-xl"></i>
+                        </div>
+                        <span class="text-xs font-bold text-gold-400 bg-gold-500/10 px-3 py-1 rounded-full" data-ar="دعم القرار والتفتيش الرقمي" data-en="Analytics & E-Inspection">دعم القرار والتفتيش الرقمي</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3" data-ar="تقارير دعم اتخاذ القرار والتفتيش الإلكتروني" data-en="Decision Support & Electronic Inspection">تقارير دعم اتخاذ القرار والتفتيش الإلكتروني</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4" data-ar="إعداد التقارير التحليلية المتقدمة وتوفير المؤشرات الإحصائية التي يحتاجها صناع القرار، إلى جانب تنفيذ أعمال التفتيش الإلكتروني الدوري لمتابعة الأداء الرقمي وتقييم الالتزام التشغيلي." data-en="Preparing analytical reports and providing key metrics needed by decision-makers within the Decision Support Department, alongside conducting electronic inspections of digital workflows.">
+                        إعداد التقارير التحليلية المتقدمة وتوفير المؤشرات الإحصائية التي يحتاجها صناع القرار، إلى جانب تنفيذ أعمال التفتيش الإلكتروني الدوري لمتابعة الأداء الرقمي وتقييم الالتزام التشغيلي.
+                    </p>
+                    <div class="flex flex-wrap gap-2 pt-2 border-t border-navy-800 text-xs text-gold-400">
+                        <span>#Power_BI</span>
+                        <span>#Decision_Support</span>
+                        <span>#Electronic_Inspection</span>
+                    </div>
                 </div>
-                <!-- Card 4 -->
-                <div data-aos="fade-up" data-aos-delay="400" class="bg-luxury-card p-8 rounded-lg border border-white/5 hover:border-luxury-gold transition-colors duration-300 group">
-                    <i class="fa-solid fa-chart-pie text-4xl text-luxury-gold mb-6 group-hover:scale-110 transition-transform"></i>
-                    <h3 class="text-2xl font-serif text-white mb-3">Decision Support</h3>
-                    <p class="text-gray-400 font-light leading-relaxed">Creating actionable insights utilizing data governance, quality assurance, and analytical reporting via Power BI.</p>
-                </div>
-                <!-- Card 5 -->
-                <div data-aos="fade-up" data-aos-delay="500" class="bg-luxury-card p-8 rounded-lg border border-white/5 hover:border-luxury-gold transition-colors duration-300 group lg:col-span-2">
-                    <i class="fa-solid fa-chalkboard-user text-4xl text-luxury-gold mb-6 group-hover:scale-110 transition-transform"></i>
-                    <h3 class="text-2xl font-serif text-white mb-3">Training & Change Management (TOT)</h3>
-                    <p class="text-gray-400 font-light leading-relaxed">Certified professional trainer bridging the gap between technology and users, ensuring high end-user adoption of digital tools and smooth transition to automated workflows.</p>
+
+                <!-- Initiative 4 -->
+                <div class="glass-card p-8 rounded-2xl transition duration-300 relative overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-500">
+                            <i class="fa-solid fa-users-gear text-xl"></i>
+                        </div>
+                        <span class="text-xs font-bold text-gold-400 bg-gold-500/10 px-3 py-1 rounded-full" data-ar="منذ ديسمبر 2021" data-en="Since Dec 2021">منذ ديسمبر 2021</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3" data-ar="إدارة التغيير والتدريب على الأنظمة الرقمية" data-en="Training & Digital Change Management">إدارة التغيير والتدريب على الأنظمة الرقمية</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4" data-ar="قيادة برامج تدريب وتأهيل الموظفين على تشغيل المنظومة الرقمية ضمن وحدة التدريب الأولي، وتطبيق منهجيات إدارة التغيير لدعم انتقال الكوادر البشرية بسلاسة نحو بيئة العمل اللاورقية." data-en="Training employees to operate digital systems as part of the Initial Training Unit, facilitating change management and supporting seamless user adoption of digital workflows.">
+                        قيادة برامج تدريب وتأهيل الموظفين على تشغيل المنظومة الرقمية ضمن وحدة التدريب الأولي، وتطبيق منهجيات إدارة التغيير لدعم انتقال الكوادر البشرية بسلاسة نحو بيئة العمل اللاورقية.
+                    </p>
+                    <div class="flex flex-wrap gap-2 pt-2 border-t border-navy-800 text-xs text-gold-400">
+                        <span>#TOT_Certified</span>
+                        <span>#Change_Management</span>
+                        <span>#User_Adoption</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Timeline -->
-    <section id="experience" class="py-24 bg-luxury-slate border-t border-white/5">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-serif font-bold text-white mb-4">Professional Journey</h2>
-                <div class="h-1 w-24 bg-luxury-gold mx-auto"></div>
+    <!-- Core Competencies -->
+    <section id="competencies" class="py-20 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <span class="text-gold-500 text-xs font-bold tracking-widest uppercase block mb-2" data-ar="المهارات التخصصية" data-en="CAPABILITIES">المهارات التخصصية</span>
+            <h2 class="text-2xl sm:text-4xl font-bold font-playfair text-white mb-4" data-ar="أبرز الكفاءات التشغيلية والتقنية" data-en="Core Operational Competencies">أبرز الكفاءات التشغيلية والتقنية</h2>
+            <div class="w-16 h-1 bg-gold-500 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <!-- Card 1 -->
+            <div class="glass-card p-7 rounded-2xl transition duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-500 mb-5 group-hover:scale-110 transition">
+                    <i class="fa-solid fa-network-wired text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2.5" data-ar="قيادة استراتيجيات التحول الرقمي" data-en="Digital Transformation Strategy">قيادة استراتيجيات التحول الرقمي</h3>
+                <p class="text-gray-400 text-sm leading-relaxed" data-ar="رقمنة العمليات الحكومية، تحليل الوضع الراهن (Current-State Analysis)، وإعادة هندسة الإجراءات لرفع الكفاءة التشغيلية." data-en="Government process digitization, current-state process analysis, and workflow reengineering to maximize efficiency.">رقمنة العمليات الحكومية، تحليل الوضع الراهن (Current-State Analysis)، وإعادة هندسة الإجراءات لرفع الكفاءة التشغيلية.</p>
             </div>
 
-            <div class="relative border-l border-luxury-gold/30 ml-4 md:ml-0 md:pl-0">
-                <!-- Job 1 -->
-                <div class="mb-16 pl-8 md:pl-12 relative" data-aos="fade-up">
-                    <div class="absolute w-4 h-4 bg-luxury-gold rounded-full -left-[8.5px] top-2 shadow-[0_0_10px_#D4AF37]"></div>
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
-                        <h3 class="text-2xl font-serif font-bold text-white">Assistant Project Manager</h3>
-                        <span class="text-luxury-gold font-mono tracking-widest text-sm mt-2 md:mt-0 border border-luxury-gold/30 px-3 py-1 rounded">09/2020 - Present</span>
+            <!-- Card 2 -->
+            <div class="glass-card p-7 rounded-2xl transition duration-300 group" data-aos="fade-up" data-aos-delay="150">
+                <div class="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-500 mb-5 group-hover:scale-110 transition">
+                    <i class="fa-solid fa-server text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2.5" data-ar="تطبيق وإدارة أنظمة ERP 365" data-en="Dynamics 365 ERP Administration">تطبيق وإدارة أنظمة ERP 365</h3>
+                <p class="text-gray-400 text-sm leading-relaxed" data-ar="إدارة وتنفيذ نظام Microsoft Dynamics 365 وإدارة موديولات المخازن والمشتريات والحسابات بكفاءة عالية." data-en="Implementation and system administration of Microsoft Dynamics 365 across Inventory, Procurement, and Accounts modules.">إدارة وتنفيذ نظام Microsoft Dynamics 365 وإدارة موديولات المخازن والمشتريات والحسابات بكفاءة عالية.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="glass-card p-7 rounded-2xl transition duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-500 mb-5 group-hover:scale-110 transition">
+                    <i class="fa-solid fa-magnifying-glass-chart text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2.5" data-ar="تحليل البيانات ودعم القرار" data-en="Data Analysis & Decision Support">تحليل البيانات ودعم القرار</h3>
+                <p class="text-gray-400 text-sm leading-relaxed" data-ar="تصميم لوحات المعلومات والتقارير التحليلية باستخدام Power BI و SQL و Excel، وحوكمة جودة البيانات." data-en="Building analytical reports and dashboards using Power BI, SQL, and Excel, paired with strict data quality governance.">تصميم لوحات المعلومات والتقارير التحليلية باستخدام Power BI و SQL و Excel، وحوكمة جودة البيانات.</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="glass-card p-7 rounded-2xl transition duration-300 group" data-aos="fade-up" data-aos-delay="250">
+                <div class="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-500 mb-5 group-hover:scale-110 transition">
+                    <i class="fa-solid fa-diagram-project text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2.5" data-ar="إدارة المشاريع التقنية للقطاع العام" data-en="Public Sector IT Project Management">إدارة المشاريع التقنية للقطاع العام</h3>
+                <p class="text-gray-400 text-sm leading-relaxed" data-ar="متابعة الجداول الزمنية للتنفيذ، التنسيق بين أصحاب المصلحة، إعداد تقارير التقدم، والدعم المباشر عند الإطلاق (Go-Live)." data-en="Implementation and timeline tracking, stakeholder coordination, progress reporting, and full go-live support.">متابعة الجداول الزمنية للتنفيذ، التنسيق بين أصحاب المصلحة، إعداد تقارير التقدم، والدعم المباشر عند الإطلاق (Go-Live).</p>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="glass-card p-7 rounded-2xl transition duration-300 group" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-500 mb-5 group-hover:scale-110 transition">
+                    <i class="fa-solid fa-chalkboard-user text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2.5" data-ar="التدريب ونقل المعرفة وإدارة التغيير" data-en="Training & Change Management">التدريب ونقل المعرفة وإدارة التغيير</h3>
+                <p class="text-gray-400 text-sm leading-relaxed" data-ar="مدرب معتمد (TOT) متمرس في تأهيل المستخدمين النهائيين ورفع معدلات تبني الأنظمة الرقمية الجديدة داخل المؤسسات." data-en="Certified trainer (TOT) skilled in end-user training, knowledge transfer, and driving high user adoption of digital systems.">مدرب معتمد (TOT) متمرس في تأهيل المستخدمين النهائيين ورفع معدلات تبني الأنظمة الرقمية الجديدة داخل المؤسسات.</p>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="glass-card p-7 rounded-2xl transition duration-300 group" data-aos="fade-up" data-aos-delay="350">
+                <div class="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-500 mb-5 group-hover:scale-110 transition">
+                    <i class="fa-solid fa-scale-balanced text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2.5" data-ar="الخبرة الإجرائية وحوكمة العمل الحكومي" data-en="Judicial & Public Sector Domain Knowledge">الخبرة الإجرائية وحوكمة العمل الحكومي</h3>
+                <p class="text-gray-400 text-sm leading-relaxed" data-ar="إلمام شامل بالإجراءات القضائية والإدارية وقانون الخدمة المدنية، مما يضمن توافق الحلول التقنية مع اللوائح المنظمة." data-en="Deep familiarity with judicial procedures and public sector administration under the Civil Service Law.">إلمام شامل بالإجراءات القضائية والإدارية وقانون الخدمة المدنية، مما يضمن توافق الحلول التقنية مع اللوائح المنظمة.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Career Timeline -->
+    <section id="experience" class="py-20 sm:py-24 bg-navy-900/50 border-t border-navy-800 px-4 sm:px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-gold-500 text-xs font-bold tracking-widest uppercase block mb-2" data-ar="التدرج الوظيفي" data-en="CAREER PATH">التدرج الوظيفي</span>
+                <h2 class="text-2xl sm:text-4xl font-bold font-playfair text-white mb-4" data-ar="المسيرة المهنية" data-en="Professional Experience">المسيرة المهنية</h2>
+                <div class="w-16 h-1 bg-gold-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Role 1 -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl relative" data-aos="fade-up">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                        <h3 class="text-lg sm:text-xl font-bold text-white" data-ar="مدير مشروع مساعد - برنامج تخطيط موارد المؤسسات (ERP)" data-en="Assistant Project Manager - Public Prosecution ERP Program">مدير مشروع مساعد - برنامج تخطيط موارد المؤسسات (ERP)</h3>
+                        <span class="text-xs font-bold text-gold-400 bg-gold-500/10 px-3 py-1 rounded-full border border-gold-500/30" data-ar="09/2020 - الحاضر" data-en="09/2020 - Present">09/2020 - الحاضر</span>
                     </div>
-                    <h4 class="text-lg text-gray-300 mb-4">Public Prosecution ERP Program - Egypt</h4>
-                    <p class="text-gray-400 font-light leading-relaxed mb-3">
-                        Managing the rollout and implementation of Microsoft Dynamics 365, tracking project timelines, and coordinating between project teams and user departments.
-                    </p>
-                    <ul class="list-disc list-inside text-gray-400 font-light leading-relaxed space-y-1">
-                        <li>Supervising data-entry quality across prosecution circuits.</li>
-                        <li>Preparing analytical reports for the Decision Support Department.</li>
-                        <li>Training employees to operate digital systems within the Initial Training Unit.</li>
+                    <p class="text-gold-500 text-sm font-semibold mb-4" data-ar="النيابة العامة المصرية - إدارة النظم والتحول الرقمي" data-en="Public Prosecution of Egypt - Systems & Digital Transformation Department">النيابة العامة المصرية - إدارة النظم والتحول الرقمي</p>
+                    <ul class="space-y-2.5 text-gray-300 text-sm leading-relaxed list-disc list-inside">
+                        <li data-ar="دعم اتخاذ القرار (منذ 10/2024): إعداد التقارير التحليلية وتوفير البيانات اللازمة لصناع القرار بإدارة دعم القرار." data-en="Decision Support (since 10/2024): Prepare analytical reports and provide data decision-makers need within the Decision Support Department.">دعم اتخاذ القرار (منذ 10/2024): إعداد التقارير التحليلية وتوفير البيانات اللازمة لصناع القرار بإدارة دعم القرار.</li>
+                        <li data-ar="تطبيق نظام ERP (منذ 01/2022): المساهمة في نشر نظام Microsoft Dynamics 365 بإدارة تخطيط وإدارة الموارد والتنسيق بين فرق العمل والإدارات المستفيدة." data-en="ERP Implementation (since 01/2022): Contribute to the rollout of Microsoft Dynamics 365 in the Resource Planning & Management Department.">تطبيق نظام ERP (منذ 01/2022): المساهمة في نشر نظام Microsoft Dynamics 365 بإدارة تخطيط وإدارة الموارد والتنسيق بين فرق العمل والإدارات المستفيدة.</li>
+                        <li data-ar="حوكمة جودة البيانات (منذ 10/2022): الإشراف على جودة إدخال البيانات ومراقبة دقتها واكتمالها عبر مختلف الإدارات والدوائر القضائية." data-en="Data Quality Governance (since 10/2022): Supervise data-entry quality across various judicial circuits and departments, monitoring accuracy and completeness.">حوكمة جودة البيانات (منذ 10/2022): الإشراف على جودة إدخال البيانات ومراقبة دقتها واكتمالها عبر مختلف الإدارات والدوائر القضائية.</li>
+                        <li data-ar="التدريب وإدارة التغيير (منذ 12/2021): تدريب الموظفين على تشغيل المنظومة الرقمية ضمن وحدة التدريب الأولي لدعم التحول الرقمي." data-en="Training & Change Management (since 12/2021): Train employees to operate the digital system as part of the Initial Training Unit.">التدريب وإدارة التغيير (منذ 12/2021): تدريب الموظفين على تشغيل المنظومة الرقمية ضمن وحدة التدريب الأولي لدعم التحول الرقمي.</li>
+                        <li data-ar="التفتيش الإلكتروني (منذ 10/2020): إجراء التفتيش الإلكتروني على أعمال النيابات من خلال وحدة تكنولوجيا المعلومات." data-en="Electronic Inspection (since 10/2020): Conduct electronic inspection of prosecution workflows through the IT Unit.">التفتيش الإلكتروني (منذ 10/2020): إجراء التفتيش الإلكتروني على أعمال النيابات من خلال وحدة تكنولوجيا المعلومات.</li>
                     </ul>
                 </div>
 
-                <!-- Job 2 -->
-                <div class="mb-16 pl-8 md:pl-12 relative" data-aos="fade-up">
-                    <div class="absolute w-4 h-4 bg-gray-500 rounded-full -left-[8.5px] top-2 border-2 border-luxury-slate"></div>
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
-                        <h3 class="text-2xl font-serif font-bold text-white">Administrative Officer</h3>
-                        <span class="text-gray-400 font-mono tracking-widest text-sm mt-2 md:mt-0 border border-white/10 px-3 py-1 rounded">02/2013 - 09/2020</span>
+                <!-- Role 2 -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl relative" data-aos="fade-up">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                        <h3 class="text-lg sm:text-xl font-bold text-white" data-ar="مسؤول إداري وتشغيلي - العمليات القضائية" data-en="Administrative Officer - Prosecution Operations">مسؤول إداري وتشغيلي - العمليات القضائية</h3>
+                        <span class="text-xs font-bold text-gray-300 bg-navy-800 px-3 py-1 rounded-full border border-navy-700">02/2013 - 09/2020</span>
                     </div>
-                    <h4 class="text-lg text-gray-300 mb-4">Prosecution Operations</h4>
-                    <p class="text-gray-400 font-light leading-relaxed">
-                        Handled enforcement administration, follow-ups on rulings, and complex judicial procedures. Built a foundational and detailed knowledge of the judicial workflows that are heavily targeted by current digitization and automation initiatives.
+                    <p class="text-gold-500 text-sm font-semibold mb-4" data-ar="النيابة العامة المصرية" data-en="Public Prosecution of Egypt">النيابة العامة المصرية</p>
+                    <p class="text-gray-300 text-sm leading-relaxed" data-ar="تولي أعمال إدارة التنفيذ ومتابعة تنفيذ القرارات والأحكام، والعمل على إجراءات التحقيقات الجنائية وتجديد الحبس ومنازعات الحيازة، مما أسهم في بناء معرفة ميدانية دقيقة بمسارات العمل القضائية التي تستهدفها مشاريع الرقمنة والتحول الرقمي." data-en="Handled enforcement administration, following up on the execution of decisions and rulings, and worked on criminal investigations and judicial procedures, building detailed knowledge of the workflows that digitization projects target.">
+                        تولي أعمال إدارة التنفيذ ومتابعة تنفيذ القرارات والأحكام، والعمل على إجراءات التحقيقات الجنائية وتجديد الحبس ومنازعات الحيازة، مما أسهم في بناء معرفة ميدانية دقيقة بمسارات العمل القضائية التي تستهدفها مشاريع الرقمنة والتحول الرقمي.
                     </p>
                 </div>
 
-                <!-- Job 3 -->
-                <div class="pl-8 md:pl-12 relative" data-aos="fade-up">
-                    <div class="absolute w-4 h-4 bg-gray-500 rounded-full -left-[8.5px] top-2 border-2 border-luxury-slate"></div>
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
-                        <h3 class="text-2xl font-serif font-bold text-white">IT Unit Officer</h3>
-                        <span class="text-gray-400 font-mono tracking-widest text-sm mt-2 md:mt-0 border border-white/10 px-3 py-1 rounded">05/2011 - 01/2013</span>
+                <!-- Role 3 -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl relative" data-aos="fade-up">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                        <h3 class="text-lg sm:text-xl font-bold text-white" data-ar="مسؤول وحدة تكنولوجيا المعلومات" data-en="IT Unit Officer">مسؤول وحدة تكنولوجيا المعلومات</h3>
+                        <span class="text-xs font-bold text-gray-300 bg-navy-800 px-3 py-1 rounded-full border border-navy-700">05/2011 - 01/2013</span>
                     </div>
-                    <h4 class="text-lg text-gray-300 mb-4">Ministry of State for Antiquities</h4>
-                    <p class="text-gray-400 font-light leading-relaxed">
-                        Provided essential IT support and operational assistance within the IT Unit of the Head of Museums Sector's office.
+                    <p class="text-gold-500 text-sm font-semibold mb-4" data-ar="وزارة الدولة لشؤون الآثار - مكتب رئيس قطاع المتاحف" data-en="Ministry of State for Antiquities - Office of the Head of the Museums Sector">وزارة الدولة لشؤون الآثار - مكتب رئيس قطاع المتاحف</p>
+                    <p class="text-gray-300 text-sm leading-relaxed" data-ar="تقديم الدعم الفني والتقني في وحدة تكنولوجيا المعلومات بمكتب رئيس قطاع المتاحف إلى جانب المهام الإدارية والتنسيقية." data-en="Provided technical and IT support in the IT Unit of the Head of Museums Sector's office alongside administrative duties.">
+                        تقديم الدعم الفني والتقني في وحدة تكنولوجيا المعلومات بمكتب رئيس قطاع المتاحف إلى جانب المهام الإدارية والتنسيقية.
                     </p>
                 </div>
             </div>
@@ -218,127 +447,199 @@
     </section>
 
     <!-- Education & Certifications -->
-    <section class="py-24 bg-luxury-navy border-t border-white/5">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                <!-- Education -->
-                <div data-aos="fade-right">
-                    <h2 class="text-3xl font-serif font-bold text-white mb-8 flex items-center">
-                        <i class="fa-solid fa-graduation-cap text-luxury-gold mr-4"></i> Education
-                    </h2>
-                    <div class="bg-luxury-card p-8 rounded-lg border border-white/5">
-                        <span class="text-luxury-gold font-mono tracking-widest text-sm block mb-2">Class of 2006</span>
-                        <h3 class="text-xl font-bold text-white mb-2">Bachelor of Management Information Systems</h3>
-                        <p class="text-gray-400 font-light">Comprehensive study bridging business management with information technology.</p>
-                    </div>
-                </div>
+    <section id="credentials" class="py-20 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <span class="text-gold-500 text-xs font-bold tracking-widest uppercase block mb-2" data-ar="المؤهلات والاعتمادات" data-en="ACADEMIC & PROFESSIONAL CREDENTIALS">المؤهلات والاعتمادات</span>
+            <h2 class="text-2xl sm:text-4xl font-bold font-playfair text-white mb-4" data-ar="التعليم والشهادات الاحترافية" data-en="Education & Certifications">التعليم والشهادات الاحترافية</h2>
+            <div class="w-16 h-1 bg-gold-500 mx-auto rounded-full"></div>
+        </div>
 
-                <!-- Certifications -->
-                <div data-aos="fade-left">
-                    <h2 class="text-3xl font-serif font-bold text-white mb-8 flex items-center">
-                        <i class="fa-solid fa-certificate text-luxury-gold mr-4"></i> Certifications
-                    </h2>
-                    <ul class="space-y-4">
-                        <li class="bg-luxury-card p-6 rounded-lg border border-white/5 flex items-start">
-                            <i class="fa-solid fa-award text-luxury-gold text-2xl mr-4 mt-1"></i>
-                            <div>
-                                <h4 class="font-bold text-white text-lg">ERP System Administration</h4>
-                                <p class="text-gray-400 font-light text-sm mt-1">CompactSoft | Inventory, Procurement, Accounts</p>
-                            </div>
-                        </li>
-                        <li class="bg-luxury-card p-6 rounded-lg border border-white/5 flex items-start">
-                            <i class="fa-solid fa-award text-luxury-gold text-2xl mr-4 mt-1"></i>
-                            <div>
-                                <h4 class="font-bold text-white text-lg">Training of Trainers (TOT)</h4>
-                                <p class="text-gray-400 font-light text-sm mt-1">AASTMT | Certified Professional Trainer</p>
-                            </div>
-                        </li>
-                        <li class="bg-luxury-card p-6 rounded-lg border border-white/5 flex items-start">
-                            <i class="fa-solid fa-award text-luxury-gold text-2xl mr-4 mt-1"></i>
-                            <div>
-                                <h4 class="font-bold text-white text-lg">Power BI & Data Analysis</h4>
-                                <p class="text-gray-400 font-light text-sm mt-1">Global Knowledge | Excel & SQL</p>
-                            </div>
-                        </li>
-                    </ul>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Education -->
+            <div class="glass-card p-6 rounded-2xl flex items-start gap-4" data-aos="fade-up" data-aos-delay="50">
+                <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-500 shrink-0">
+                    <i class="fa-solid fa-graduation-cap text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-xs text-gold-400 font-bold">2006</span>
+                    <h3 class="text-base font-bold text-white mt-0.5 mb-1" data-ar="بكالوريوس نظم المعلومات الإدارية" data-en="Bachelor of Management Information Systems">بكالوريوس نظم المعلومات الإدارية</h3>
+                    <p class="text-xs text-gray-400" data-ar="تخصص نظم المعلومات وإدارة الأعمال" data-en="Management Information Systems (MIS)">تخصص نظم المعلومات وإدارة الأعمال</p>
+                </div>
+            </div>
+
+            <!-- TOT -->
+            <div class="glass-card p-6 rounded-2xl flex items-start gap-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-500 shrink-0">
+                    <i class="fa-solid fa-certificate text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-xs text-gold-400 font-bold">05/2022 • 40 Hours</span>
+                    <h3 class="text-base font-bold text-white mt-0.5 mb-1" data-ar="شهادة تدريب المدربين (TOT)" data-en="Training of Trainers (TOT)">شهادة تدريب المدربين (TOT)</h3>
+                    <p class="text-xs text-gray-400" data-ar="الأكاديمية العربية للعلوم والتكنولوجيا والنقل البحري (AASTMT)" data-en="Arab Academy for Science, Technology & Maritime Transport (AASTMT)">الأكاديمية العربية للعلوم والتكنولوجيا والنقل البحري (AASTMT)</p>
+                </div>
+            </div>
+
+            <!-- Power BI -->
+            <div class="glass-card p-6 rounded-2xl flex items-start gap-4" data-aos="fade-up" data-aos-delay="150">
+                <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-500 shrink-0">
+                    <i class="fa-solid fa-chart-column text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-xs text-gold-400 font-bold">02/2022 • 25 Hours</span>
+                    <h3 class="text-base font-bold text-white mt-0.5 mb-1" data-ar="تحليل البيانات عبر Microsoft Power BI" data-en="Microsoft Power BI Data Analytics">تحليل البيانات عبر Microsoft Power BI</h3>
+                    <p class="text-xs text-gray-400">Global Knowledge</p>
+                </div>
+            </div>
+
+            <!-- ERP Admin -->
+            <div class="glass-card p-6 rounded-2xl flex items-start gap-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-500 shrink-0">
+                    <i class="fa-solid fa-database text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-xs text-gold-400 font-bold">12/2021 • 60 Hours</span>
+                    <h3 class="text-base font-bold text-white mt-0.5 mb-1" data-ar="إدارة أنظمة تخطيط موارد المؤسسات (ERP)" data-en="ERP System Administration">إدارة أنظمة تخطيط موارد المؤسسات (ERP)</h3>
+                    <p class="text-xs text-gray-400" data-ar="شركة CompactSoft | المخازن، المشتريات، الحسابات" data-en="CompactSoft | Inventory, Procurement & Accounts Modules">شركة CompactSoft | المخازن، المشتريات، الحسابات</p>
+                </div>
+            </div>
+
+            <!-- SQL & Excel -->
+            <div class="glass-card p-6 rounded-2xl flex items-start gap-4" data-aos="fade-up" data-aos-delay="250">
+                <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-500 shrink-0">
+                    <i class="fa-solid fa-code text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-xs text-gold-400 font-bold">25 Hours</span>
+                    <h3 class="text-base font-bold text-white mt-0.5 mb-1" data-ar="تحليل البيانات باستخدام Excel & SQL" data-en="Data Analysis with Excel & SQL">تحليل البيانات باستخدام Excel & SQL</h3>
+                    <p class="text-xs text-gray-400" data-ar="استعلامات قواعد البيانات والتحليل الإحصائي" data-en="Database Querying & Analytical Reporting">استعلامات قواعد البيانات والتحليل الإحصائي</p>
+                </div>
+            </div>
+
+            <!-- Civil Service Grade -->
+            <div class="glass-card p-6 rounded-2xl flex items-start gap-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-500 shrink-0">
+                    <i class="fa-solid fa-medal text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-xs text-gold-400 font-bold">07/2025 • 2023–2025</span>
+                    <h3 class="text-base font-bold text-white mt-0.5 mb-1" data-ar="الدرجة الثانية التخصصية (أ) وتقييم «ممتاز»" data-en="Civil Service Grade 2 (A) & 'Excellent' Rating">الدرجة الثانية التخصصية (أ) وتقييم «ممتاز»</h3>
+                    <p class="text-xs text-gray-400" data-ar="مجموعة التنمية الإدارية - تقييم أداء ممتاز لـ 3 سنوات متتالية" data-en="Administrative Development Group - 3 Consecutive Years Excellent Rating">مجموعة التنمية الإدارية - تقييم أداء ممتاز لـ 3 سنوات متتالية</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact & Footer -->
-    <footer id="contact" class="bg-[#050A17] pt-24 pb-10 border-t border-luxury-gold/20 relative overflow-hidden">
-        <!-- Decoration -->
-        <div class="absolute top-0 right-0 w-64 h-64 bg-luxury-gold/5 rounded-full blur-3xl"></div>
-        
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-serif font-bold text-white mb-4">Let's Connect</h2>
-                <p class="text-gray-400 font-light max-w-2xl mx-auto">Open to discussing digital transformation strategies, ERP implementations, and technological consultations.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 sm:py-24 bg-navy-900/70 border-t border-navy-800 px-4 sm:px-6">
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+            <span class="text-gold-500 text-xs font-bold tracking-widest uppercase block mb-2" data-ar="قنوات التواصل المباشر" data-en="DIRECT CHANNELS">قنوات التواصل المباشر</span>
+            <h2 class="text-2xl sm:text-4xl font-bold font-playfair text-white mb-4" data-ar="تواصل معي" data-en="Let's Connect">تواصل معي</h2>
+            <p class="text-gray-300 mb-10 max-w-xl mx-auto text-sm sm:text-base" data-ar="متاح للمناقشات الاستشارية، وقيادة مشاريع التحول الرقمي وأنظمة (ERP)، وبرامج التدريب المؤسسي. يسعدني تواصلكم المباشر." data-en="Available for digital transformation consulting, ERP project leadership, and corporate training initiatives. Feel free to reach out directly.">
+                متاح للمناقشات الاستشارية، وقيادة مشاريع التحول الرقمي وأنظمة (ERP)، وبرامج التدريب المؤسسي. يسعدني تواصلكم المباشر.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-10">
                 <!-- WhatsApp Card -->
-                <a href="https://wa.me/201113208080" target="_blank" data-aos="fade-up" data-aos-delay="100" class="group bg-luxury-card p-8 rounded-lg border border-white/5 hover:border-[#25D366] text-center transition-all duration-300 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-[#25D366]/10 text-[#25D366] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-[#25D366] group-hover:text-white transition-colors duration-300">
-                        <i class="fa-brands fa-whatsapp text-3xl"></i>
+                <a href="https://wa.me/201113208080" target="_blank" class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center gap-2 hover:bg-emerald-600/20 transition group">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl group-hover:scale-110 transition">
+                        <i class="fa-brands fa-whatsapp"></i>
                     </div>
-                    <h3 class="text-white font-bold text-lg mb-2">WhatsApp</h3>
-                    <p class="text-gray-400 font-light text-sm">+20 111 320 8080</p>
-                    <span class="text-[#25D366] text-xs font-bold mt-4 inline-block uppercase tracking-wider">Message Now &rarr;</span>
+                    <span class="text-xs text-gray-400" data-ar="واتساب / هاتف" data-en="WhatsApp / Phone">واتساب / هاتف</span>
+                    <span class="text-sm font-bold text-white" dir="ltr">+20 111 320 8080</span>
                 </a>
 
                 <!-- Email Card -->
-                <a href="mailto:mahmoudahmed2821985@gmail.com" data-aos="fade-up" data-aos-delay="200" class="group bg-luxury-card p-8 rounded-lg border border-white/5 hover:border-luxury-gold text-center transition-all duration-300 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-luxury-gold/10 text-luxury-gold rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-luxury-gold group-hover:text-luxury-navy transition-colors duration-300">
-                        <i class="fa-regular fa-envelope text-2xl"></i>
+                <a href="mailto:mahmoudahmed2821985@gmail.com" class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center gap-2 transition group">
+                    <div class="w-12 h-12 rounded-full bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl group-hover:scale-110 transition">
+                        <i class="fa-solid fa-envelope"></i>
                     </div>
-                    <h3 class="text-white font-bold text-lg mb-2">Email</h3>
-                    <p class="text-gray-400 font-light text-sm break-words">mahmoudahmed<br>2821985@gmail.com</p>
+                    <span class="text-xs text-gray-400" data-ar="البريد الإلكتروني" data-en="Email Address">البريد الإلكتروني</span>
+                    <span class="text-xs sm:text-sm font-bold text-white break-all">mahmoudahmed2821985@gmail.com</span>
                 </a>
 
-                <!-- Phone Card -->
-                <a href="tel:+201003307759" data-aos="fade-up" data-aos-delay="300" class="group bg-luxury-card p-8 rounded-lg border border-white/5 hover:border-luxury-gold text-center transition-all duration-300 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-luxury-gold/10 text-luxury-gold rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-luxury-gold group-hover:text-luxury-navy transition-colors duration-300">
-                        <i class="fa-solid fa-phone text-2xl"></i>
+                <!-- Location / vCard Card -->
+                <button onclick="downloadVCard()" class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center gap-2 transition group">
+                    <div class="w-12 h-12 rounded-full bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl group-hover:scale-110 transition">
+                        <i class="fa-solid fa-address-book"></i>
                     </div>
-                    <h3 class="text-white font-bold text-lg mb-2">Phone</h3>
-                    <p class="text-gray-400 font-light text-sm">+20 100 330 7759</p>
-                    <p class="text-gray-400 font-light text-sm mt-1">+20 111 320 8080</p>
-                </a>
-            </div>
-            
-            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-                <p>&copy; 2024 Mahmoud Marzouk. All rights reserved.</p>
-                <div class="mt-4 md:mt-0 font-serif italic text-gray-400">
-                    Excellence in Digital Transformation
-                </div>
+                    <span class="text-xs text-gray-400" data-ar="القاهرة، مصر" data-en="Cairo, Egypt">القاهرة، مصر</span>
+                    <span class="text-sm font-bold text-gold-400 underline" data-ar="حفظ بطاقة الاتصال (vCard)" data-en="Download Contact Card">حفظ بطاقة الاتصال (vCard)</span>
+                </button>
             </div>
         </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-navy-950 border-t border-navy-900 text-center text-xs text-gray-500 px-4">
+        <p data-ar="© 2026 محمود أحمد مرزوق. جميع الحقوق محفوظة." data-en="© 2026 Mahmoud Ahmed Marzouk. All rights reserved.">© 2026 محمود أحمد مرزوق. جميع الحقوق محفوظة.</p>
     </footer>
 
-    <!-- AOS Animation Initialization -->
+    <!-- Floating WhatsApp Button for Mobile/Desktop -->
+    <a href="https://wa.me/201113208080" target="_blank" aria-label="WhatsApp" class="whatsapp-float fixed bottom-6 left-6 z-50 w-14 h-14 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center shadow-2xl shadow-emerald-600/40 text-2xl transition">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize Animate On Scroll
         AOS.init({
-            once: true,           // whether animation should happen only once - while scrolling down
-            offset: 100,          // offset (in px) from the original trigger point
-            duration: 800,        // values from 0 to 3000, with step 50ms
-            easing: 'ease-out-cubic', // default easing for AOS animations
+            once: true,
+            offset: 40,
+            duration: 800,
         });
 
-        // Sticky Navbar Effect on Scroll
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('shadow-lg', 'bg-luxury-navy');
-                nav.classList.remove('bg-luxury-navy/90');
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
             } else {
-                nav.classList.remove('shadow-lg', 'bg-luxury-navy');
-                nav.classList.add('bg-luxury-navy/90');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
             }
-        });
+        }
+
+        // Bilingual Switcher (AR / EN)
+        let currentLang = 'ar';
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            const html = document.documentElement;
+            html.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+            html.setAttribute('lang', currentLang);
+            document.getElementById('lang-btn-text').innerText = currentLang === 'ar' ? 'EN' : 'AR';
+
+            document.querySelectorAll('[data-ar]').forEach(el => {
+                el.innerText = el.getAttribute(`data-${currentLang}`);
+            });
+        }
+
+        // Executive vCard Generator (One-Click Save to Phone Contacts)
+        function downloadVCard() {
+            const vcard = [
+                'BEGIN:VCARD',
+                'VERSION:3.0',
+                'FN:Mahmoud Ahmed Marzouk',
+                'N:Marzouk;Mahmoud;Ahmed;;',
+                'TITLE:Digital Transformation Consultant | Assistant Project Manager (ERP)',
+                'TEL;TYPE=CELL,VOICE:+201113208080',
+                'EMAIL;TYPE=PREF,INTERNET:mahmoudahmed2821985@gmail.com',
+                'ADR;TYPE=WORK:;;Cairo;;;Egypt;',
+                'END:VCARD'
+            ].join('\n');
+
+            const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Mahmoud_Marzouk.vcf';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
     </script>
 </body>
 </html>
